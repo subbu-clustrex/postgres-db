@@ -23,6 +23,9 @@ CREATE SEQUENCE patient_id_seq
 
 Create Table patients (
 id integer DEFAULT nextval('patient_id_seq'::regclass) NOT NULL,
+created_at timestamp with time zone DEFAULT now(),
+deleted_at timestamp with time zone,
+updated_at timestamp with time zone,
 first_name varchar(100),
 last_name varchar(100),
 state varchar(50),
